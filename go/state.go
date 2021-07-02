@@ -12,7 +12,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gomodules.xyz/jsonpatch/v3"
+	"gomodules.xyz/jsonpatch/v2"
 )
 
 //Pusher implements a push method,
