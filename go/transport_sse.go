@@ -30,7 +30,9 @@ func (es *eventSourceTransport) connect(w http.ResponseWriter, r *http.Request) 
 	}()
 	//eventsource headers
 	w.Header().Set("Cache-Control", "no-cache")
-	w.Header().Set("Vary", "Accept")
+	// w.Header().Set("Vary", "Accept")
+	w.Header().Set("Connection", "keep-alive")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/event-stream")
 	//connection is now expecting a stream of events
 	es.w = w
